@@ -5,3 +5,5 @@ coco_data/
 visual_genome_data/
 
 wandb/
+
+__pycache__/
