@@ -119,11 +119,11 @@ class WinoLoss(nn.Module):
         cos_img2text = torch.matmul(image_features, text_features.T) # [bs,bs]
 
         pos_score = torch.diag(cos_img2text) #[bs]
-        img_neg_score = torch.max(cos_img2text - 10 * torch.eye(batch_size, requires_grad=False).cuda(0), dim=-1)[0] # [bs]
+        img_neg_score = torch.max(cos_img2text - 10 * torch.eye(batch_size, requires_grad=False).cuda(), dim=-1)[0] # [bs]
 
         cos_text2img = cos_img2text.T #[bs,bs]
         if is_hard:
-            text_neg_score = torch.max(cos_text2img - 10 * torch.eye(batch_size, requires_grad=False).cuda(0), dim=-1)[0] # [bs]
+            text_neg_score = torch.max(cos_text2img - 10 * torch.eye(batch_size, requires_grad=False).cuda(), dim=-1)[0] # [bs]
         else: 
             text_neg_score = torch.mean(cos_text2img, dim=-1)
         # text_neg_score = torch.max(cos_text2img - 10 * torch.eye(batch_size, requires_grad=False).cuda(0), dim=-1)[0] # [bs]
