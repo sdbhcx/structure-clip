@@ -1,0 +1,1 @@
+{"_runtime": 353717.316813712, "TextRank1": 0.36329468212714916, "_timestamp": 1764859350.084513, "_step": 1378, "TextRank5": 0.6416633346661336, "TextRank10": 0.7470611755297881, "ImageRank1": 0.452, "ImageRank5": 0.7238, "ImageRank10": 0.8162, "acc_test_attribution": 0.8116427558180708, "acc_test_relation": 0.8222690396367609, "Loss": 0.054346777498722076}
